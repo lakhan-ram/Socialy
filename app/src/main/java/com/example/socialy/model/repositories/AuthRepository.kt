@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase
 class AuthRepository(private val context: Context) {
     private val auth = FirebaseAuth.getInstance()
     private val databaseReference = FirebaseDatabase.getInstance().getReference("users")
-    private val authList = MutableLiveData<FirebaseUser>()
+    val authList = MutableLiveData<FirebaseUser>()
 
     fun signUp(name: String, email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
