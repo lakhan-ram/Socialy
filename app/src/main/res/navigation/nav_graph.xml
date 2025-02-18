@@ -7,7 +7,44 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.socialy.WelcomeFragment"
+        android:name="com.example.socialy.view.fragments.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signUpNameFragment"
+            app:destination="@id/signUpNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpNameFragment"
+        android:name="com.example.socialy.view.fragments.SignUpNameFragment"
+        android:label="fragment_sign_up_name"
+        tools:layout="@layout/fragment_sign_up_name" >
+        <action
+            android:id="@+id/action_signUpNameFragment_to_signUpEmailFragment"
+            app:destination="@id/signUpEmailFragment" />
+        <action
+            android:id="@+id/action_signUpNameFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpEmailFragment"
+        android:name="com.example.socialy.view.fragments.SignUpEmailFragment"
+        android:label="fragment_sign_up_email"
+        tools:layout="@layout/fragment_sign_up_email" >
+        <action
+            android:id="@+id/action_signUpEmailFragment_to_signUpPasswordFragment"
+            app:destination="@id/signUpPasswordFragment" />
+        <action
+            android:id="@+id/action_signUpEmailFragment_to_signUpNameFragment"
+            app:destination="@id/signUpNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpPasswordFragment"
+        android:name="com.example.socialy.view.fragments.SignUpPasswordFragment"
+        android:label="fragment_sign_up_password"
+        tools:layout="@layout/fragment_sign_up_password" >
+        <action
+            android:id="@+id/action_signUpPasswordFragment_to_signUpEmailFragment"
+            app:destination="@id/signUpEmailFragment" />
+    </fragment>
 </navigation>

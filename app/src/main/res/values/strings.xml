@@ -8,4 +8,11 @@
     <string name="create_account">Create account</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in">Sign In</string>
+    <string name="arrow_back">Arrow back</string>
+    <string name="next">Next</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
