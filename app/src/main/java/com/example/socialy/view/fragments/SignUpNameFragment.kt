@@ -21,7 +21,14 @@ class SignUpNameFragment : Fragment() {
         }
 
         binding.btnNextSignUpName.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpNameFragment_to_signUpEmailFragment)
+            val name = binding.etTextName.text.toString()
+            val bundle = Bundle()
+            bundle.putString("name", name)
+            if (name.isNotEmpty()) {
+                findNavController().navigate(R.id.action_signUpNameFragment_to_signUpEmailFragment, bundle)
+            } else {
+                binding.textInputLayoutName.error = "Please enter your name"
+            }
         }
         return binding.root
     }
