@@ -21,6 +21,13 @@ class SignUpPasswordFragment : Fragment() {
     ): View {
         binding = FragmentSignUpPasswordBinding.inflate(inflater, container, false)
         authViewModel = context?.applicationContext?.let { AuthViewModel(it) }!!
+
+        authViewModel.authList.observe(viewLifecycleOwner) {
+            val intent = Intent(context, HomeActivity::class.java)
+            startActivity(intent)
+            activity?.finishAffinity()
+        }
+
         binding.btnBackSignUpPassword.setOnClickListener {
             findNavController().navigate(R.id.action_signUpPasswordFragment_to_signUpEmailFragment)
         }
@@ -33,9 +40,6 @@ class SignUpPasswordFragment : Fragment() {
             if (password.isNotEmpty()) {
                 binding.progressBarSignUp.visibility = View.VISIBLE
                 authViewModel.signUp(name!!, email!!, password)
-                val intent = Intent(context, HomeActivity::class.java)
-                startActivity(intent)
-                activity?.finishAffinity()
             } else {
                 binding.textInputLayoutPassword.error = "Please enter your password"
             }
