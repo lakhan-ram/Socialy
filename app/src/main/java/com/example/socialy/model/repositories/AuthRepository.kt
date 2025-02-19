@@ -57,4 +57,15 @@ class AuthRepository(private val context: Context) {
                 }
             }
     }
+
+    fun resetPassword(email: String) {
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(context, "Email sent", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "Error: ${it.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 }

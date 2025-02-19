@@ -15,4 +15,9 @@ class AuthViewModel(context: Context) : ViewModel() {
     fun signIn(email: String, password: String) {
         authRepository.signIn(email, password)
     }
+
+    fun resetPassword(email: String) {
+        authRepository.resetPassword(email)
+    }
+
 }
