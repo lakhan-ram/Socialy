@@ -42,4 +42,19 @@ class AuthRepository(private val context: Context) {
                 }
             }
     }
+
+    fun signIn(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { taskSignIn ->
+                if (taskSignIn.isSuccessful) {
+                    authList.postValue(auth.currentUser!!)
+                } else {
+                    Toast.makeText(
+                        context,
+                        "Error: ${taskSignIn.exception?.localizedMessage}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+    }
 }

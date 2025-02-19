@@ -21,6 +21,9 @@ class WelcomeFragment : Fragment() {
             findNavController().navigate(R.id.action_welcomeFragment_to_signUpNameFragment)
         }
 
+        binding.tvSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_welcomeFragment_to_signInFragment)
+        }
         return binding.root
     }
 }
