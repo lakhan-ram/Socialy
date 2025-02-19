@@ -50,6 +50,10 @@ class SignInFragment : Fragment() {
             }
         }
 
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
+        }
+
         return binding.root
     }
 }
