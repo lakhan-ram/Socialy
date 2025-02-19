@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_signUpNameFragment"
             app:destination="@id/signUpNameFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpNameFragment"
@@ -47,4 +50,9 @@
             android:id="@+id/action_signUpPasswordFragment_to_signUpEmailFragment"
             app:destination="@id/signUpEmailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.socialy.view.fragments.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
 </navigation>
